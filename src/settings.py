@@ -10,7 +10,7 @@ class Settings:
     database_host = '127.0.0.1'
     database_port = 5432
 
-    database_name = 'test_fastapi'
+    database_name = 'nazar_fastapi'
 
 
 settings = Settings()

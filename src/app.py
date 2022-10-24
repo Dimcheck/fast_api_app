@@ -1,9 +1,10 @@
-import uvicorn
-from fastapi import FastAPI, Request
 import time
 
+import uvicorn
+from fastapi import FastAPI, Request
+
 from database.database import Base, engine
-from routers import home, items, token
+from routers import crypto, home, items, token
 
 Base.metadata.create_all(bind=engine)
 
@@ -21,7 +22,9 @@ async def add_process_time_header(request: Request, call_next):
 
 app.include_router(home.router)
 app.include_router(items.router)
+app.include_router(crypto.router)
 app.include_router(token.router)
+
 
 
 
